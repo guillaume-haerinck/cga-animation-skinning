@@ -11,7 +11,9 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [An inclusive Conformal Geometric Algebra GPU animation interpolation and deformation algorithm](http://www.gaalop.de/wp-content/uploads/CGI_CGA_Paper.pdf) | 2016 | |
 | [Deform, Cut and Tear a skinned model using Conformal Geometric Algebra](https://arxiv.org/pdf/2007.04464v2.pdf) | 2020 | |
 | [Geometric algebra rotorns for skinned character animation blending](http://george.papagiannakis.org/wp-content/uploads/2013/09/GArotorsForSkinnedCharacterAnimationBlending-1.5.pdf) | 2013 | |
-| [Skinning with Dual Quaternions](https://team.inria.fr/imagine/files/2014/10/skinning_dual_quaternions.pdf) | 2014 | |
+| [Skinning with Dual Quaternions](https://team.inria.fr/imagine/files/2014/10/skinning_dual_quaternions.pdf) | 2007 | |
+| [Geometric skinning with approximate dual quaternion blending](https://www.cs.utah.edu/~ladislav/kavan08geometric/kavan08geometric.html) | 2008 | Follow-up paper to Skinning with Dual Quaternions by the same team |
+| [Real-time skeletal skinning with optimized centers of rotation](https://la.disneyresearch.com/publication/skinning-with-optimized-cors/) | 2016 | Limits of Dual quaternion and alternatives by Disney research |
 | [Geometric Computing in Computer Graphics and Robotics using Conformal Geometric Algebra](http://tuprints.ulb.tu-darmstadt.de/764/1/DissertationDH061213.pdf) | 2006 | |
 | [Improved Vertex Skinning Algorithm based on Dual Quaternions](https://ir.canterbury.ac.nz/bitstream/handle/10092/16776/Yin,%20Hao_Msc%20Thesis.pdf) | 2019 | University of Canterbury |
 | [A beginners guide to Dual-Quaternions](https://cs.gmu.edu/~jmlien/teaching/cs451/uploads/Main/dual-quaternion.pdf) | 2012 | |
