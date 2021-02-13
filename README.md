@@ -15,6 +15,7 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [Geometric Computing in Computer Graphics and Robotics using Conformal Geometric Algebra](http://tuprints.ulb.tu-darmstadt.de/764/1/DissertationDH061213.pdf) | 2006 | |
 | [Improved Vertex Skinning Algorithm based on Dual Quaternions](https://ir.canterbury.ac.nz/bitstream/handle/10092/16776/Yin,%20Hao_Msc%20Thesis.pdf) | 2019 | University of Canterbury |
 | [A beginners guide to Dual-Quaternions](https://cs.gmu.edu/~jmlien/teaching/cs451/uploads/Main/dual-quaternion.pdf) | 2012 | |
+| [SIGGRAPH 2019 - Geometric Algebra for Computer Graphics - Course notes](https://arxiv.org/pdf/2002.04509.pdf) | 2019 | |
 
 ### Repositories
 
@@ -66,3 +67,4 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [Real Time Rendering](http://www.realtimerendering.com/book.html) | Famous book on rendering techniques. Check p.84 about vertex blending                          | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/81E9-e9Ek+L.jpg">       
 | [GPU Pro 5 - Quaternions Revisited](http://gpupro.blogspot.com/search/label/Skinning) | An 2014 Article by Peter Sikachev, Sergey Makeev and Vladimir Egorov. Sample code can be found [here](https://github.com/SergeyMakeev/Quaternions-Revisited) | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/51ew7AfD8SL._SX258_BO1,204,203,200_.jpg"> |
 | [Geometric Algebra For Computer Science](https://geometricalgebra.org/) | | <img width="80" src="https://geometricalgebra.org/images/cover.png"> |
+| [Geometric Algebra For Computer Graphics](https://www.springer.com/gp/book/9781846289965) | | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/51bI7NldFnL.jpg"> |
