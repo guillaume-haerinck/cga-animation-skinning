@@ -18,6 +18,8 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [Improved Vertex Skinning Algorithm based on Dual Quaternions](https://ir.canterbury.ac.nz/bitstream/handle/10092/16776/Yin,%20Hao_Msc%20Thesis.pdf) | 2019 | University of Canterbury |
 | [A beginners guide to Dual-Quaternions](https://cs.gmu.edu/~jmlien/teaching/cs451/uploads/Main/dual-quaternion.pdf) | 2012 | |
 | [SIGGRAPH 2019 - Geometric Algebra for Computer Graphics - Course notes](https://arxiv.org/pdf/2002.04509.pdf) | 2019 | |
+| [Pose Space Deformation: A Unified Approach to Shape Interpolation and
+Skeleton-Driven Deformation](http://scribblethink.org/Work/PSD/PSD.pdf) | 2000 | Explain drawbacks of vertex blending (without quaternions) |
 
 ### Repositories
 
@@ -32,6 +34,7 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | Name | Description |
 | --- | --- |
 | [GDC 2015 - Maths for game programmers : Inverse kinematics revisited](http://www.dtecta.com/files/GDC15_VanDenBergen_Gino_Math_Tut.pdf) | By Gino van den Bergen |
+| [GDC 2015 - Real-time transformations in the order 1886](https://readyatdawn.sharefile.com/share/view/s892ebe64d544726b) | |
 
 ### Videos
 
@@ -66,7 +69,7 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ |
 | [Game Engine Architecture](https://www.gameenginebook.com/)  | A famous book by Jason Gregory, a Naughty Dog engineer. Check chap.12 about Animation Systems       | <img width="80" src="https://www.amazon.fr/images/I/41Hz1rTfm4L._SX260_.jpg">            |
 | [3D Math Primer for Graphics and Game Development, 2nd Edition](https://www.crcpress.com/3D-Math-Primer-for-Graphics-and-Game-Development/Dunn/p/book/9781568817231) | Fletcher Dunn. Skinning is presented p. 424 | <img width="80" src="https://images.tandf.co.uk/common/jackets/amazon/978156881/9781568817231.jpg"> |
-| [Real Time Rendering](http://www.realtimerendering.com/book.html) | Famous book on rendering techniques. Check p.84 about vertex blending                          | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/81E9-e9Ek+L.jpg">       
+| [Real Time Rendering](http://www.realtimerendering.com/book.html) | Famous book on rendering techniques. Check p.84 about vertex blending. About dual quaternions in skinning "Computation is less than 1.5x the cost for linear skin blending and the results are good, which has led to rapid adoption of this technique"                          | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/81E9-e9Ek+L.jpg">       
 | [GPU Pro 5 - Quaternions Revisited](http://gpupro.blogspot.com/search/label/Skinning) | An 2014 Article by Peter Sikachev, Sergey Makeev and Vladimir Egorov. Sample code can be found [here](https://github.com/SergeyMakeev/Quaternions-Revisited) | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/51ew7AfD8SL._SX258_BO1,204,203,200_.jpg"> |
 | [Geometric Algebra For Computer Science](https://geometricalgebra.org/) | | <img width="80" src="https://geometricalgebra.org/images/cover.png"> |
 | [Geometric Algebra For Computer Graphics](https://www.springer.com/gp/book/9781846289965) | | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/51bI7NldFnL.jpg"> |
