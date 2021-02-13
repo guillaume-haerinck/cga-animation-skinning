@@ -13,7 +13,8 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [Geometric algebra rotorns for skinned character animation blending](http://george.papagiannakis.org/wp-content/uploads/2013/09/GArotorsForSkinnedCharacterAnimationBlending-1.5.pdf) | 2013 | |
 | [Skinning with Dual Quaternions](https://team.inria.fr/imagine/files/2014/10/skinning_dual_quaternions.pdf) | 2014 | |
 | [Geometric Computing in Computer Graphics and Robotics using Conformal Geometric Algebra](http://tuprints.ulb.tu-darmstadt.de/764/1/DissertationDH061213.pdf) | 2006 | |
-| [Improved Vertex Skinning Algorithm based on Dual Quaternions](https://ir.canterbury.ac.nz/bitstream/handle/10092/16776/Yin,%20Hao_Msc%20Thesis.pdf) | 2019, University of Canterbury |
+| [Improved Vertex Skinning Algorithm based on Dual Quaternions](https://ir.canterbury.ac.nz/bitstream/handle/10092/16776/Yin,%20Hao_Msc%20Thesis.pdf) | 2019 | University of Canterbury |
+| [A beginners guide to Dual-Quaternions](https://cs.gmu.edu/~jmlien/teaching/cs451/uploads/Main/dual-quaternion.pdf) | 2012 | |
 
 ### Repositories
 
@@ -22,6 +23,23 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [GA Bounce](https://github.com/qcoumes/ga-bounce) | |
 | [GA Raytracer](https://github.com/torresf/ga-raytracer) | |
 | [GA Shaders](https://github.com/dragonbleapiece/GAShaders) | |
+
+### Slides
+
+| Name | Description |
+| --- | --- |
+| [GDC 2015 - Maths for game programmers : Inverse kinematics revisited](http://www.dtecta.com/files/GDC15_VanDenBergen_Gino_Math_Tut.pdf) | By Gino van den Bergen |
+
+### Videos
+
+| Name | Description |
+| --- | --- |
+| [GDC 2013 - Maths for game programmers : Understanding Quaternions](https://www.gdcvault.com/play/1017653/Math-for-Game-Programmers-Understanding) | |
+| [Dual Quaternion Demystified](https://www.youtube.com/watch?v=ichOiuBoBoQ) | GAME2020 talk by Steven De Keninck |
+| [3Blue1Brown - Quaternions and 3d rotation](https://www.youtube.com/watch?v=zjMuIxRvygQ) | |
+| [Fun with WebGL 2.0 - Dual Quaternions with Skinning](https://www.youtube.com/watch?v=pUeBOymcEw0) | By SketchpunkLabs |
+| [Handmade Hero Chat 19 - Introduction to Mesh Skinning](https://www.youtube.com/watch?v=sd-d4Z7utVM) | By [Casey Muratori](https://handmade.network/m/cmuratori) |
+| [Siggraph 2019 - Geometric Algebra](https://www.youtube.com/watch?v=tX4H_ctggYo) | By [Bivector](https://bivector.net/) |
 
 ### Websites
 
@@ -35,6 +53,8 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [Dual Quaternions skinning tutorial and C++ codes](http://rodolphe-vaillant.fr/?e=29) | |
 | [Dual Quaternion Shader Explained line by line](https://www.chinedufn.com/dual-quaternion-shader-explained/) | 2017 |
 | [Maths - Dual Quaternions](https://www.euclideanspace.com/maths/algebra/realNormedAlgebra/other/dualQuaternion/index.htm) | |
+| [Projective Geometric Algebra done right](http://terathon.com/blog/projective-geometric-algebra-done-right/) | Blog post by [Eric Lengyel](http://www.terathon.com/lengyel/) in 2020 |
+| [Let's remove Quaternions from every 3D engine](https://marctenbosch.com/quaternions/) | Interactive Introduction to Rotors from Geometric Algebra by [Marc ten Bosch](https://marctenbosch.com/) |
 
 ### Books
 
