@@ -12,6 +12,8 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [Deform, Cut and Tear a skinned model using Conformal Geometric Algebra](https://arxiv.org/pdf/2007.04464v2.pdf) | 2020 | |
 | [Geometric algebra rotorns for skinned character animation blending](http://george.papagiannakis.org/wp-content/uploads/2013/09/GArotorsForSkinnedCharacterAnimationBlending-1.5.pdf) | 2013 | |
 | [Skinning with Dual Quaternions](https://team.inria.fr/imagine/files/2014/10/skinning_dual_quaternions.pdf) | 2014 | |
+| [Geometric Computing in Computer Graphics and Robotics using Conformal Geometric Algebra](http://tuprints.ulb.tu-darmstadt.de/764/1/DissertationDH061213.pdf) | 2006 | |
+| [Improved Vertex Skinning Algorithm based on Dual Quaternions](https://ir.canterbury.ac.nz/bitstream/handle/10092/16776/Yin,%20Hao_Msc%20Thesis.pdf) | 2019, University of Canterbury |
 
 ### Repositories
 
@@ -30,6 +32,9 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [WebGL 2 Skinning](https://webgl2fundamentals.org/webgl/lessons/webgl-skinning.html) | |
 | [GLTF Skinning](https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_020_Skins.md) | |
 | [Skinned models in DirectX 11](http://www.richardssoftware.net/2013/10/skinned-models-in-directx-11-with.html) | |
+| [Dual Quaternions skinning tutorial and C++ codes](http://rodolphe-vaillant.fr/?e=29) | |
+| [Dual Quaternion Shader Explained line by line](https://www.chinedufn.com/dual-quaternion-shader-explained/) | 2017 |
+| [Maths - Dual Quaternions](https://www.euclideanspace.com/maths/algebra/realNormedAlgebra/other/dualQuaternion/index.htm) | |
 
 ### Books
 
