@@ -11,6 +11,7 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [An inclusive Conformal Geometric Algebra GPU animation interpolation and deformation algorithm](http://www.gaalop.de/wp-content/uploads/CGI_CGA_Paper.pdf) | 2016 | |
 | [Deform, Cut and Tear a skinned model using Conformal Geometric Algebra](https://arxiv.org/pdf/2007.04464v2.pdf) | 2020 | |
 | [Geometric algebra rotorns for skinned character animation blending](http://george.papagiannakis.org/wp-content/uploads/2013/09/GArotorsForSkinnedCharacterAnimationBlending-1.5.pdf) | 2013 | |
+| [Skinning with Dual Quaternions](https://team.inria.fr/imagine/files/2014/10/skinning_dual_quaternions.pdf) | 2014 | |
 
 ### Repositories
 
@@ -37,5 +38,5 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [Game Engine Architecture](https://www.gameenginebook.com/)  | A famous book by Jason Gregory, a Naughty Dog engineer. Check chap.12 about Animation Systems       | <img width="80" src="https://www.amazon.fr/images/I/41Hz1rTfm4L._SX260_.jpg">            |
 | [3D Math Primer for Graphics and Game Development, 2nd Edition](https://www.crcpress.com/3D-Math-Primer-for-Graphics-and-Game-Development/Dunn/p/book/9781568817231) | Fletcher Dunn. Skinning is presented p. 424 | <img width="80" src="https://images.tandf.co.uk/common/jackets/amazon/978156881/9781568817231.jpg"> |
 | [Real Time Rendering](http://www.realtimerendering.com/book.html) | Famous book on rendering techniques. Check p.84 about vertex blending                          | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/81E9-e9Ek+L.jpg">       
-| [GPU Pro 5 - Quaternions Revisited](http://gpupro.blogspot.com/search/label/Skinning) | An 2014 Article by Peter Sikachev | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/51ew7AfD8SL._SX258_BO1,204,203,200_.jpg"> |
+| [GPU Pro 5 - Quaternions Revisited](http://gpupro.blogspot.com/search/label/Skinning) | An 2014 Article by Peter Sikachev, Sergey Makeev and Vladimir Egorov. Sample code can be found [here](https://github.com/SergeyMakeev/Quaternions-Revisited) | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/51ew7AfD8SL._SX258_BO1,204,203,200_.jpg"> |
 
