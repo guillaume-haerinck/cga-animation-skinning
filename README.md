@@ -40,6 +40,7 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [Fun with WebGL 2.0 - Dual Quaternions with Skinning](https://www.youtube.com/watch?v=pUeBOymcEw0) | By SketchpunkLabs |
 | [Handmade Hero Chat 19 - Introduction to Mesh Skinning](https://www.youtube.com/watch?v=sd-d4Z7utVM) | By [Casey Muratori](https://handmade.network/m/cmuratori) |
 | [Siggraph 2019 - Geometric Algebra](https://www.youtube.com/watch?v=tX4H_ctggYo) | By [Bivector](https://bivector.net/) |
+| [Understanding Quaternions through Geometric Algebra](https://www.youtube.com/watch?v=eo2HNCTV78s) | By [Jorge Rodriguez](https://www.youtube.com/channel/UCEhBM2x5MG9-e_JSOzU068w) |
 
 ### Websites
 
@@ -64,4 +65,4 @@ Using conformal geometric algebra (cga) for mesh skinning animation.
 | [3D Math Primer for Graphics and Game Development, 2nd Edition](https://www.crcpress.com/3D-Math-Primer-for-Graphics-and-Game-Development/Dunn/p/book/9781568817231) | Fletcher Dunn. Skinning is presented p. 424 | <img width="80" src="https://images.tandf.co.uk/common/jackets/amazon/978156881/9781568817231.jpg"> |
 | [Real Time Rendering](http://www.realtimerendering.com/book.html) | Famous book on rendering techniques. Check p.84 about vertex blending                          | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/81E9-e9Ek+L.jpg">       
 | [GPU Pro 5 - Quaternions Revisited](http://gpupro.blogspot.com/search/label/Skinning) | An 2014 Article by Peter Sikachev, Sergey Makeev and Vladimir Egorov. Sample code can be found [here](https://github.com/SergeyMakeev/Quaternions-Revisited) | <img width="80" src="https://images-na.ssl-images-amazon.com/images/I/51ew7AfD8SL._SX258_BO1,204,203,200_.jpg"> |
-
+| [Geometric Algebra For Computer Science](https://geometricalgebra.org/) | | <img width="80" src="https://geometricalgebra.org/images/cover.png"> |
