@@ -36,9 +36,9 @@ Great but heavy on performance side, in games used in conjonction with other sys
 | --- | --- | --- | --- |
 | [GDC 2017 - Physics Animation in Uncharted 4: A Thief's End](https://www.youtube.com/watch?v=7S-_vuoKgR4) | 2017 | Video | |
 
-### **Dual Quaternion Skinning (DQS)**
+### Dual Quaternion Skinning (DQS)
 
-There can be a Bulging effect, but it can be partly removed. Supposed to be 1.5 times less performant in computation time than LBS.
+Great visual improvement from LBS for half the memory cost. There can be a Bulging effect (can be partly removed) and can cost a bit more in computation time. Do not need additionnal mesh data, works on traditionnal .fbx but visuals will differ from the modelling tool if DQS is not enabled in it.
 
 | Name | Year | Type | Description |
 | --- | --- | --- | --- |
@@ -48,15 +48,18 @@ There can be a Bulging effect, but it can be partly removed. Supposed to be 1.5 
 | [Dual Quaternions skinning tutorial and C++ codes](http://rodolphe-vaillant.fr/?e=29) | | Website | |
 | [Dual Quaternion Shader Explained line by line](https://www.chinedufn.com/dual-quaternion-shader-explained/) | 2017 | Website | |
 | [Fun with WebGL 2.0 - Dual Quaternions with Skinning](https://www.youtube.com/watch?v=pUeBOymcEw0) | 2017 | Video | By SketchpunkLabs |
+| [DQ skinning for Unity](https://github.com/ConstantineRudenko/DQ-skinning-for-Unity) | 2019 | Plugin | |
 
 ### Center of Rotation (CoR)
 
-Great but seems less performant than DQS and needs pre-processing and more data added to the pipeline.
+Great but it is less performant than DQS and needs pre-processing and more data added to the pipeline.
 
 | Name | Year | Type | Description |
 | --- | --- | --- | --- |
 | [Real-time skeletal skinning with optimized centers of rotation](https://la.disneyresearch.com/publication/skinning-with-optimized-cors/) | 2016 | Paper | Disney research |
 | [CoR in Unity](https://forum.unity.com/threads/cor-real-time-skeletal-skinning-with-optimized-centers-of-rotation.634435/) | 2016 | Forum post | Open source implementation in Unity of the CoR Paper |
+| [Evaluation of Optimised Centres of Rotation Skinning](https://graphics.tu-bs.de/upload/publications/bittner2019evaluation/EvaluationOfOptimisedCentresOfRotationSkinning.pdf) | 2019 | Paper |  |
+
 ___
 
 ## General References
