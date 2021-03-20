@@ -49,6 +49,7 @@ Great visual improvement from LBS for half the memory cost. There can be a Bulgi
 | [Dual Quaternion Shader Explained line by line](https://www.chinedufn.com/dual-quaternion-shader-explained/) | 2017 | Website | |
 | [Fun with WebGL 2.0 - Dual Quaternions with Skinning](https://www.youtube.com/watch?v=pUeBOymcEw0) | 2017 | Video | By SketchpunkLabs |
 | [DQ skinning for Unity](https://github.com/ConstantineRudenko/DQ-skinning-for-Unity) | 2019 | Plugin | |
+| [OpenGL Development Cookbook](https://www.amazon.fr/OpenGL-Development-Cookbook-Muhammad-Movania/dp/1849695059) | 2013 | Book | Chapter 8.3 on dual quaternion skinning |
 
 ### Center of Rotation (CoR)
 
