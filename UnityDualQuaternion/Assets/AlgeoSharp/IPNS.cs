@@ -1,5 +1,6 @@
 ﻿using System;
 using AlgeoSharp.Exceptions;
+using UnityEngine;
 
 namespace AlgeoSharp
 {
@@ -10,23 +11,23 @@ namespace AlgeoSharp
             if (IPNS.GetGeometricEntity(v) != GeometricEntity.Vector)
                 throw new InvalidEntityException();
 
-            return v + 0.5 * MultiVector.ScalarProduct(v, v) * Basis.E8 + Basis.E0;
+            return v + 0.5f * MultiVector.ScalarProduct(v, v) * Basis.E8 + Basis.E0;
         }
 
-        public static MultiVector CreatePoint(double e1, double e2, double e3)
+        public static MultiVector CreatePoint(float e1, float e2, float e3)
         {
             MultiVector v = MultiVector.Vector(e1, e2, e3);
-            return v + 0.5 * MultiVector.ScalarProduct(v, v) * Basis.E8 + Basis.E0;
+            return v + 0.5f * MultiVector.ScalarProduct(v, v) * Basis.E8 + Basis.E0;
         }
 
-        public static MultiVector CreateSphere(MultiVector c, double r)
+        public static MultiVector CreateSphere(MultiVector c, float r)
         {
-            return IPNS.CreatePoint(c) - 0.5 * r * r * Basis.E8;
+            return IPNS.CreatePoint(c) - 0.5f * r * r * Basis.E8;
         }
 
-        public static MultiVector CreateSphere(double e1, double e2, double e3, double r)
+        public static MultiVector CreateSphere(float e1, float e2, float e3, float r)
         {
-            return IPNS.CreatePoint(e1, e2, e3) - 0.5 * r * r * Basis.E8;
+            return IPNS.CreatePoint(e1, e2, e3) - 0.5f * r * r * Basis.E8;
         }
 
         public static MultiVector CreateSphere(MultiVector p1, MultiVector p2, MultiVector p3, MultiVector p4)
@@ -34,7 +35,7 @@ namespace AlgeoSharp
             return (p1 ^ p2 ^ p3 ^ p4).Dual;
         }
 
-        public static MultiVector CreatePlane(MultiVector n, double d)
+        public static MultiVector CreatePlane(MultiVector n, float d)
         {
             return n + d * Basis.E8;
         }
@@ -54,9 +55,9 @@ namespace AlgeoSharp
             return (p1 ^ p2 ^ Basis.E8).Dual;
         }
 
-        public static MultiVector CreateCircle(MultiVector n, MultiVector c, double r)
+        public static MultiVector CreateCircle(MultiVector n, MultiVector c, float r)
         {
-            double d = (double)MultiVector.ScalarProduct(c, n);
+            float d = (float)MultiVector.ScalarProduct(c, n);
             return IPNS.CreatePlane(n, d) ^ IPNS.CreateSphere(c, r);
         }
 
@@ -74,38 +75,38 @@ namespace AlgeoSharp
         public static void GetPointParams(MultiVector obj, out MultiVector x)
         {
             MultiVector temp;
-            double r;
+            float r;
 
             IPNS.GetSphereParams(obj, out temp, out r);
 
-            if (r != 0.0)
+            if (r != 0f)
                 throw new InvalidEntityException();
 
             x = temp;
         }
 
-        public static void GetSphereParams(MultiVector obj, out MultiVector c, out double r)
+        public static void GetSphereParams(MultiVector obj, out MultiVector c, out float r)
         {
             if (!obj.ContainsOnly(1) || obj.E0 == 0.0)
                 throw new InvalidEntityException();
 
             obj /= obj.E0;
             c = MultiVector.Vector(obj.E1, obj.E2, obj.E3);
-            r = Math.Sqrt(Math.Abs(2 * obj.E8 - (double)MultiVector.ScalarProduct(c, c)));
+            r = Mathf.Sqrt(Math.Abs(2 * obj.E8 - MultiVector.ScalarProduct(c, c)));
 
             // HACK
             if (Math.Abs(r) < 1E-3)
-                r = 0.0;
+                r = 0f;
         }
 
-        public static void GetPlaneParams(MultiVector obj, out MultiVector n, out double d)
+        public static void GetPlaneParams(MultiVector obj, out MultiVector n, out float d)
         {
             if (!obj.ContainsOnly(1) || obj.E0 != 0.0)
                 throw new InvalidEntityException();
 
             n = MultiVector.Vector(obj.E1, obj.E2, obj.E3);
 
-            double norm = n.Length;
+            float norm = n.Length;
 
             n /= norm;
             d = obj.E8 / norm;
@@ -121,7 +122,7 @@ namespace AlgeoSharp
                 obj[Basis.E13],
                 -obj[Basis.E12]);
 
-            double norm = d.Length;
+            float norm = d.Length;
 
             if (norm == 0.0)
                 throw new InvalidEntityException();
@@ -137,7 +138,7 @@ namespace AlgeoSharp
             t = MultiVector.CrossProduct(dct, d);
         }
 
-        public static void GetCircleParams(MultiVector obj, out MultiVector n, out MultiVector c, out double r)
+        public static void GetCircleParams(MultiVector obj, out MultiVector n, out MultiVector c, out float r)
         {
             if (!obj.ContainsOnly(2))
                 throw new InvalidEntityException();
@@ -149,7 +150,7 @@ namespace AlgeoSharp
                 -obj[Basis.E12]);
 
             // c dot n
-            double d = obj[Basis.EPLANE];
+            float d = obj[Basis.EPLANE];
 
             n = MultiVector.Vector(
                 obj[Basis.E1 ^ Basis.E0],
@@ -157,15 +158,15 @@ namespace AlgeoSharp
                 obj[Basis.E3 ^ Basis.E0]);
 
             c = MultiVector.CrossProduct(n, ccd) + n * d;
-            c /= (double)MultiVector.ScalarProduct(n, n);
+            c /= (float)MultiVector.ScalarProduct(n, n);
 
-            double x;
-            if (n.E1 != 0) x = (obj[Basis.E1 ^ Basis.E8] + (double)d * c.E1) / n.E1;
-            else if (n.E2 != 0) x = (obj[Basis.E2 ^ Basis.E8] + (double)d * c.E2) / n.E2;
-            else if (n.E3 != 0) x = (obj[Basis.E3 ^ Basis.E8] + (double)d * c.E3) / n.E3;
+            float x;
+            if (n.E1 != 0) x = (obj[Basis.E1 ^ Basis.E8] + (float)d * c.E1) / n.E1;
+            else if (n.E2 != 0) x = (obj[Basis.E2 ^ Basis.E8] + (float)d * c.E2) / n.E2;
+            else if (n.E3 != 0) x = (obj[Basis.E3 ^ Basis.E8] + (float)d * c.E3) / n.E3;
             else throw new InvalidEntityException();
 
-            r = Math.Sqrt((double)MultiVector.ScalarProduct(c, c) - 2 * x);
+            r = Mathf.Sqrt(MultiVector.ScalarProduct(c, c) - 2 * x);
             n /= n.Length;
         }
 
@@ -176,7 +177,7 @@ namespace AlgeoSharp
 
             obj = obj.Dual;
 
-            double delta = Math.Sqrt(Math.Abs((double)MultiVector.InnerProduct(obj, obj)));
+            float delta = Mathf.Sqrt(Mathf.Abs((float) MultiVector.InnerProduct(obj, obj)));
 
             try
             {
@@ -205,7 +206,7 @@ namespace AlgeoSharp
                 if (obj.E0 == 0)
                     return GeometricEntity.Plane;
 
-                MultiVector center; double radius;
+                MultiVector center; float radius;
                 GetSphereParams(obj, out center, out radius);
 
                 if (radius == 0)
@@ -219,7 +220,7 @@ namespace AlgeoSharp
                 if (obj.ContainsOnly(Basis.E12, Basis.E13, Basis.E23))
                     return GeometricEntity.Bivector;
 
-                if (MultiVector.InnerProduct(Basis.E8, obj) == 0.0)
+                if (MultiVector.InnerProduct(Basis.E8, obj) == 0f)
                     return GeometricEntity.Line;
 
                 return GeometricEntity.Circle;

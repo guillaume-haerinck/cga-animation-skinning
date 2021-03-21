@@ -36,7 +36,7 @@ namespace AlgeoSharp
         private static Dictionary<int, Blade> outerProductCache = new Dictionary<int, Blade>();
         private static Dictionary<int, Blade> innerProductCache = new Dictionary<int, Blade>();
 
-        private static readonly double[] minkowskiSignature = { 1.0, 1.0, 1.0, -1.0, 1.0 };
+        private static readonly float[] minkowskiSignature = { 1f, 1f, 1f, -1f, 1f };
 
 
         private Basis(int bitMask, bool nullMetric)
@@ -98,37 +98,37 @@ namespace AlgeoSharp
         public static MultiVector operator +(Basis e1, Basis e2)
         {
             MultiVector ret = new MultiVector();
-            ret[e1] = 1.0;
-            ret[e2] += 1.0;
+            ret[e1] = 1f;
+            ret[e2] += 1f;
             return ret;
         }
 
         public static MultiVector operator -(Basis e1, Basis e2)
         {
             MultiVector ret = new MultiVector();
-            ret[e1] = 1.0;
-            ret[e2] -= 1.0;
+            ret[e1] = 1f;
+            ret[e2] -= 1f;
             return ret;
         }
 
         public static Blade operator -(Basis e)
         {
-            return new Blade(e, -1.0);
+            return new Blade(e, -1f);
         }
 
-        public static Blade operator *(double f, Basis e)
+        public static Blade operator *(float f, Basis e)
         {
             return new Blade(e, f);
         }
 
-        public static Blade operator *(Basis e, double f)
+        public static Blade operator *(Basis e, float f)
         {
             return f * e;
         }
 
-        public static Blade operator /(Basis e, double f)
+        public static Blade operator /(Basis e, float f)
         {
-            return (1.0 / f) * e;
+            return (1f / f) * e;
         }
 
         public static MultiVector operator *(Basis e1, Basis e2)
@@ -202,7 +202,7 @@ namespace AlgeoSharp
             else
             {
                 int rBitMask = e1.bitMask ^ e2.bitMask;
-                double rValue = Basis.Order(e1, e2);
+                float rValue = Basis.Order(e1, e2);
 
                 int common = e1.bitMask & e2.bitMask;
                 int i = 0;
@@ -333,7 +333,7 @@ namespace AlgeoSharp
             Basis bm = new Basis(b | Basis.EMINUS.bitMask, false);
 
             if (this.Contains(Basis.E0))
-                return 0.5 * (bm + bp);
+                return 0.5f * (bm + bp);
 
             if (this.Contains(Basis.E8))
                 return bm - bp;
@@ -355,10 +355,10 @@ namespace AlgeoSharp
             Basis b8 = new Basis(b | Basis.E8.bitMask, true);
 
             if (this.Contains(Basis.EPLUS))
-                return b0 - 0.5 * b8;
+                return b0 - 0.5f * b8;
 
             if (this.Contains(Basis.EMINUS))
-                return b0 + 0.5 * b8;
+                return b0 + 0.5f * b8;
 
             return this;
         }

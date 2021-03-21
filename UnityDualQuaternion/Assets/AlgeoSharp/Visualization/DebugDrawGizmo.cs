@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-// https://docs.unity3d.com/ScriptReference/Gizmos.html
+using System;
 
 namespace AlgeoSharp.Visualization
 {
@@ -74,92 +73,52 @@ namespace AlgeoSharp.Visualization
 
 		void drawVector(MultiVector vector, Color color)
 		{
-			/*
-			GL.Color3(color);
+			Gizmos.color = color;
 
 			MultiVector rotAxis = MultiVector.CrossProduct(Basis.E3, vector);
-			double rotAngle = Math.Acos(vector.E3 / vector.Length); ;
+			float rotAngle = Mathf.Acos(vector.E3 / vector.Length);
 
 			if (rotAxis == MultiVector.Zero)
 			{
 				rotAxis = Basis.E1;
-				rotAngle = 0.0;
+				rotAngle = 0f;
 			}
 
-
-			double length = vector.Length;
-
-			GL.PushMatrix();
-
+			float length = vector.Length;
+			/*
+			Vector3 direction = rotAngle * Mathf.Rad2Deg;
 			GL.Rotate(MathHelper.RadiansToDegrees(rotAngle), rotAxis.E1, rotAxis.E2, rotAxis.E3);
-			GL.Scale(length, length, length);
-
-			drawModel(vectorLineVbo);
-
-			GL.PopMatrix();
-
-			GL.PushMatrix();
-
-			GL.Translate(vector.E1, vector.E2, vector.E3);
-			GL.Rotate(MathHelper.RadiansToDegrees(rotAngle), rotAxis.E1, rotAxis.E2, rotAxis.E3);
-
-			drawModel(vectorArrowVbo);
-
-			GL.PopMatrix();
 			*/
+			//Gizmos.DrawRay(transform.position, direction);
 		}
 
 		void drawPoint(MultiVector point, Color color)
 		{
 			MultiVector x;
-
 			IPNS.GetPointParams(point, out x);
-
-			/*
-			GL.Color3(color);
-
-			GL.PushMatrix();
-
-			GL.Translate(x.E1, x.E2, x.E3);
-			GL.Scale(PointRadius, PointRadius, PointRadius);
-
-			drawModel(sphereVbo);
-
-			GL.PopMatrix();
-			*/
+			Gizmos.color = color;
+			Gizmos.DrawSphere(new Vector3(x.E1, x.E2, x.E3), 0.2f);
 		}
 
 		void drawSphere(MultiVector sphere, Color color)
 		{
 			MultiVector c;
-			double r;
-
+			float r;
 			IPNS.GetSphereParams(sphere, out c, out r);
-
-			/*
-			GL.Color3(color);
-
-			GL.PushMatrix();
-
-			GL.Translate(c.E1, c.E2, c.E3);
-			GL.Scale(r, r, r);
-
-			drawModel(sphereVbo);
-
-			GL.PopMatrix();
-			*/
+			Gizmos.color = color;
+			Gizmos.DrawWireSphere(new Vector3(c.E1, c.E2, c.E3), r);
 		}
 
 		void drawPlane(MultiVector plane, Color color)
 		{
 			MultiVector n;
-			double d;
+			float d;
 
 			IPNS.GetPlaneParams(plane, out n, out d);
 
 			/*
 			MultiVector rotAxis = MultiVector.CrossProduct(Basis.E3, n);
-			double rotAngle = Math.Acos(n.E3);
+			float rotAngle = Math.Acos(n.E3);
 
 			if (rotAxis == MultiVector.Zero)
 			{
@@ -188,7 +147,7 @@ namespace AlgeoSharp.Visualization
 
 			MultiVector rotAxis = MultiVector.CrossProduct(Basis.E3, d);
 			/*
-			double rotAngle = Math.Acos(d.E3);
+			float rotAngle = Math.Acos(d.E3);
 
 			if (rotAxis == MultiVector.Zero)
 			{
@@ -212,13 +171,13 @@ namespace AlgeoSharp.Visualization
 		void drawCircle(MultiVector circle, Color color)
 		{
 			MultiVector n, c;
-			double r;
+			float r;
 
 			IPNS.GetCircleParams(circle, out n, out c, out r);
 
 			/*
 			MultiVector rotAxis = MultiVector.CrossProduct(Basis.E3, n);
-			double rotAngle = Math.Acos(n.E3);
+			float rotAngle = Math.Acos(n.E3);
 
 			if (rotAxis == MultiVector.Zero)
 			{
@@ -254,14 +213,15 @@ namespace AlgeoSharp.Visualization
 
 		#region Editor callbacks
 
-		void Start()
+		void Awake()
         {
 			AlgeoObjects = new List<AlgeoObject>();
         }
 
-        void Update()
+        void OnDrawGizmos()
         {
-			// Render();
+			if (AlgeoObjects != null)
+				Render();
         }
 
         #endregion

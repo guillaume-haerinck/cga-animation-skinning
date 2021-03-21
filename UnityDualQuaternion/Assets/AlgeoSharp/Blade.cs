@@ -5,9 +5,9 @@ namespace AlgeoSharp
 {
     public struct Blade
     {
-        public static readonly Blade Zero = new Blade(Basis.S, 0.0);
+        public static readonly Blade Zero = new Blade(Basis.S, 0f);
 
-        public Blade(Basis basis, double value)
+        public Blade(Basis basis, float value)
         {
             this.basis = basis;
             this.value = value;
@@ -20,8 +20,8 @@ namespace AlgeoSharp
             get { return basis; }
         }
 
-        double value;
-        public double Value
+        float value;
+        public float Value
         {
             get { return value; }
         }
@@ -29,15 +29,15 @@ namespace AlgeoSharp
 
         public static implicit operator Blade(Basis e)
         {
-            return new Blade(e, 1.0);
+            return new Blade(e, 1f);
         }
 
-        public static implicit operator Blade(double value)
+        public static implicit operator Blade(float value)
         {
             return new Blade(Basis.S, value);
         }
 
-        public static explicit operator double(Blade b)
+        public static explicit operator float(Blade b)
         {
             if (b.Basis != Basis.S)
                 throw new InvalidCastException();
@@ -47,7 +47,7 @@ namespace AlgeoSharp
 
         public static explicit operator Basis(Blade b)
         {
-            if (b.Value != 1.0)
+            if (b.Value != 1f)
                 throw new InvalidCastException();
 
             return b.Basis;
@@ -75,19 +75,19 @@ namespace AlgeoSharp
             return new Blade(b.Basis, -b.Value);
         }
 
-        public static Blade operator *(double f, Blade b)
+        public static Blade operator *(float f, Blade b)
         {
             return new Blade(b.Basis, f * b.Value);
         }
 
-        public static Blade operator *(Blade b, double f)
+        public static Blade operator *(Blade b, float f)
         {
             return f * b;
         }
 
-        public static Blade operator /(Blade b, double f)
+        public static Blade operator /(Blade b, float f)
         {
-            return (1.0 / f) * b;
+            return (1f / f) * b;
         }
 
         public static MultiVector operator /(Blade b1, Blade b2)

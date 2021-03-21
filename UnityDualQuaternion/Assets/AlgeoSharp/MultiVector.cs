@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace AlgeoSharp
 {
@@ -9,7 +10,7 @@ namespace AlgeoSharp
         public static readonly MultiVector Zero = new MultiVector();
 
 
-        public static MultiVector Vector(double e1, double e2, double e3)
+        public static MultiVector Vector(float e1, float e2, float e3)
         {
             MultiVector v = new MultiVector();
             v.E1 = e1;
@@ -27,14 +28,14 @@ namespace AlgeoSharp
         Dictionary<Basis, Blade> blades = new Dictionary<Basis, Blade>();
 
 
-        public double this[Basis basis]
+        public float this[Basis basis]
         {
             get
             {
                 if (blades.ContainsKey(basis))
                     return blades[basis].Value;
                 else
-                    return 0.0;
+                    return 0f;
             }
             set
             {
@@ -54,7 +55,7 @@ namespace AlgeoSharp
             }
         }
 
-        public double this[Blade blade]
+        public float this[Blade blade]
         {
             get
             {
@@ -68,12 +69,12 @@ namespace AlgeoSharp
 
         #region Grade 1 Blades
 
-        public double E1 { get { return this[Basis.E1]; } set { this[Basis.E1] = value; } }
-        public double E2 { get { return this[Basis.E2]; } set { this[Basis.E2] = value; } }
-        public double E3 { get { return this[Basis.E3]; } set { this[Basis.E3] = value; } }
+        public float E1 { get { return this[Basis.E1]; } set { this[Basis.E1] = value; } }
+        public float E2 { get { return this[Basis.E2]; } set { this[Basis.E2] = value; } }
+        public float E3 { get { return this[Basis.E3]; } set { this[Basis.E3] = value; } }
 
-        public double E0 { get { return this[Basis.E0]; } set { this[Basis.E0] = value; } }
-        public double E8 { get { return this[Basis.E8]; } set { this[Basis.E8] = value; } }
+        public float E0 { get { return this[Basis.E0]; } set { this[Basis.E0] = value; } }
+        public float E8 { get { return this[Basis.E8]; } set { this[Basis.E8] = value; } }
 
         #endregion
 
@@ -172,7 +173,7 @@ namespace AlgeoSharp
 
                 foreach (Blade blade in this.Blades)
                 {
-                    double reverse;
+                    float reverse;
 
                     if ((blade.Basis.Grade / 2) % 2 == 0)
                         reverse = blade.Value;
@@ -213,7 +214,7 @@ namespace AlgeoSharp
             {
                 try
                 {
-                    return this / (double)(this * this.Reverse);
+                    return this / (float)(this * this.Reverse);
                 }
                 catch (InvalidCastException)
                 {
@@ -222,24 +223,24 @@ namespace AlgeoSharp
             }
         }
 
-        public double Length
+        public float Length
         {
             get
             {
-                double sum = 0.0;
+                float sum = 0f;
                 foreach (Blade b in this.Blades)
                     sum += b.Value * b.Value;
-                return Math.Sqrt(sum);
+                return Mathf.Sqrt(sum);
             }
         }
 
 
         public static implicit operator MultiVector(Basis e)
         {
-            return new Blade(e, 1.0);
+            return new Blade(e, 1f);
         }
 
-        public static implicit operator MultiVector(double value)
+        public static implicit operator MultiVector(float value)
         {
             return new Blade(Basis.S, value);
         }
@@ -251,9 +252,9 @@ namespace AlgeoSharp
             return result;
         }
 
-        public static explicit operator double(MultiVector v)
+        public static explicit operator float(MultiVector v)
         {
-            return (double)((Blade)v);
+            return (float)((Blade)v);
         }
 
         public static explicit operator Blade(MultiVector v)
@@ -292,7 +293,7 @@ namespace AlgeoSharp
             return result;
         }
 
-        public static MultiVector operator *(double f, MultiVector v)
+        public static MultiVector operator *(float f, MultiVector v)
         {
             MultiVector result = new MultiVector();
             foreach (Blade b in v.Blades)
@@ -300,14 +301,14 @@ namespace AlgeoSharp
             return result;
         }
 
-        public static MultiVector operator *(MultiVector v, double f)
+        public static MultiVector operator *(MultiVector v, float f)
         {
             return f * v;
         }
 
-        public static MultiVector operator /(MultiVector v, double f)
+        public static MultiVector operator /(MultiVector v, float f)
         {
-            return (1.0 / f) * v;
+            return (1f / f) * v;
         }
 
         public static MultiVector operator *(MultiVector v1, MultiVector v2)
@@ -399,9 +400,9 @@ namespace AlgeoSharp
             return (v2 ^ v1) * Basis.E123;
         }
 
-        public static double ScalarProduct(MultiVector v1, MultiVector v2)
+        public static float ScalarProduct(MultiVector v1, MultiVector v2)
         {
-            double result = 0;
+            float result = 0;
 
             foreach (Blade b in v1.Blades)
             {
