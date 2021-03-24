@@ -85,11 +85,13 @@ namespace AlgeoSharp.Visualization
 			}
 
 			float length = vector.Length;
-			/*
-			Vector3 direction = rotAngle * Mathf.Rad2Deg;
-			GL.Rotate(MathHelper.RadiansToDegrees(rotAngle), rotAxis.E1, rotAxis.E2, rotAxis.E3);
-			*/
-			//Gizmos.DrawRay(transform.position, direction);
+			Vector3 direction = new Vector3(rotAngle * Mathf.Rad2Deg, rotAngle * Mathf.Rad2Deg, rotAngle * Mathf.Rad2Deg);
+			Quaternion rot = Quaternion.AngleAxis(Mathf.Rad2Deg * rotAngle, new Vector3(rotAxis.E1, rotAxis.E2, rotAxis.E3));
+			Matrix4x4 rotMat = Matrix4x4.Rotate(rot);
+
+			Gizmos.matrix = rotMat;
+			Gizmos.DrawRay(transform.position, direction * length);
+			Gizmos.matrix = Matrix4x4.identity;
 		}
 
 		void drawPoint(MultiVector point, Color color)
@@ -116,27 +118,22 @@ namespace AlgeoSharp.Visualization
 
 			IPNS.GetPlaneParams(plane, out n, out d);
 
-			/*
 			MultiVector rotAxis = MultiVector.CrossProduct(Basis.E3, n);
-			float rotAngle = Math.Acos(n.E3);
+			float rotAngle = Mathf.Acos(n.E3);
 
 			if (rotAxis == MultiVector.Zero)
 			{
 				rotAxis = Basis.E1;
-				rotAngle = 0.0;
+				rotAngle = 0f;
 			}
 
-			GL.Color3(color);
+			Gizmos.color = color;
 
-			GL.PushMatrix();
-
-			GL.Translate(n.E1 * d, n.E2 * d, n.E3 * d);
-			GL.Rotate(MathHelper.RadiansToDegrees(rotAngle), rotAxis.E1, rotAxis.E2, rotAxis.E3);
-
-			drawModel(planeVbo);
-
-			GL.PopMatrix();
-			*/
+			Quaternion rot = Quaternion.AngleAxis(Mathf.Rad2Deg * rotAngle, new Vector3(rotAxis.E1, rotAxis.E2, rotAxis.E3));
+			Matrix4x4 rotMat = Matrix4x4.Rotate(rot);
+			Gizmos.matrix = rotMat;
+			Gizmos.DrawWireCube(new Vector3(n.E1 * d, n.E2 * d, n.E3 * d), new Vector3(10f, 10f, 0f));
+			Gizmos.matrix = Matrix4x4.identity;
 		}
 
 		void drawLine(MultiVector line, Color color)
