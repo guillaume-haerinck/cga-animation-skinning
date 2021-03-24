@@ -143,26 +143,22 @@ namespace AlgeoSharp.Visualization
 			IPNS.GetLineParams(line, out t, out d);
 
 			MultiVector rotAxis = MultiVector.CrossProduct(Basis.E3, d);
-			/*
-			float rotAngle = Math.Acos(d.E3);
+			float rotAngle = Mathf.Acos(d.E3);
 
 			if (rotAxis == MultiVector.Zero)
 			{
 				rotAxis = Basis.E1;
-				rotAngle = 0.0;
+				rotAngle = 0f;
 			}
 
-			GL.Color3(color);
+			Gizmos.color = color;
 
-			GL.PushMatrix();
+			Quaternion rot = Quaternion.AngleAxis(Mathf.Rad2Deg * rotAngle, new Vector3(rotAxis.E1, rotAxis.E2, rotAxis.E3));
+			Matrix4x4 rotMat = Matrix4x4.Rotate(rot);
 
-			GL.Translate(t.E1, t.E2, t.E3);
-			GL.Rotate(MathHelper.RadiansToDegrees(rotAngle), rotAxis.E1, rotAxis.E2, rotAxis.E3);
-
-			drawModel(lineVbo);
-
-			GL.PopMatrix();
-			*/
+			Gizmos.matrix = rotMat;
+			Gizmos.DrawLine(new Vector3(t.E1, t.E2, t.E3 - 10f), new Vector3(t.E1, t.E2, t.E3 + 10f));
+			Gizmos.matrix = Matrix4x4.identity;
 		}
 
 		void drawCircle(MultiVector circle, Color color)
